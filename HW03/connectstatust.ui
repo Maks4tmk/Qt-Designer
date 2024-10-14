@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>400</width>
-    <height>305</height>
+    <height>218</height>
    </rect>
   </property>
   <property name="font">
@@ -21,38 +21,85 @@
    <string>Form</string>
   </property>
   <layout class="QGridLayout" name="gridLayout">
-   <item row="1" column="0" colspan="2">
-    <widget class="QTextBrowser" name="te_info">
-     <property name="enabled">
-      <bool>true</bool>
+   <item row="0" column="0">
+    <widget class="QLabel" name="la_hostname">
+     <property name="text">
+      <string>Имя хоста</string>
      </property>
     </widget>
    </item>
-   <item row="2" column="0">
-    <widget class="QLabel" name="la_status">
-     <property name="font">
-      <font>
-       <family>Times New Roman</family>
-       <pointsize>13</pointsize>
-       <bold>true</bold>
-       <underline>true</underline>
-      </font>
-     </property>
-     <property name="frameShadow">
-      <enum>QFrame::Shadow::Plain</enum>
-     </property>
+   <item row="0" column="1">
+    <widget class="QLineEdit" name="le_hostname"/>
+   </item>
+   <item row="1" column="0">
+    <widget class="QLabel" name="la_dbname">
      <property name="text">
-      <string>Статус</string>
+      <string>Имя БД</string>
      </property>
-     <property name="alignment">
-      <set>Qt::AlignmentFlag::AlignCenter</set>
+    </widget>
+   </item>
+   <item row="1" column="1">
+    <widget class="QLineEdit" name="le_dbname"/>
+   </item>
+   <item row="2" column="0">
+    <widget class="QLabel" name="la_login">
+     <property name="text">
+      <string>Логин</string>
      </property>
     </widget>
    </item>
    <item row="2" column="1">
-    <widget class="QPushButton" name="pb_closed">
+    <widget class="QLineEdit" name="le_login"/>
+   </item>
+   <item row="3" column="0">
+    <widget class="QLabel" name="la_password">
      <property name="text">
-      <string>Закрыть</string>
+      <string>Пароль</string>
+     </property>
+    </widget>
+   </item>
+   <item row="3" column="1">
+    <widget class="QLineEdit" name="le_password">
+     <property name="echoMode">
+      <enum>QLineEdit::EchoMode::Password</enum>
+     </property>
+    </widget>
+   </item>
+   <item row="4" column="0">
+    <widget class="QLabel" name="la_port">
+     <property name="text">
+      <string>Прот </string>
+     </property>
+    </widget>
+   </item>
+   <item row="5" column="0" colspan="2">
+    <layout class="QHBoxLayout" name="horizontalLayout">
+     <item>
+      <widget class="QPushButton" name="pb_OK">
+       <property name="text">
+        <string>ОК</string>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QPushButton" name="pb_closed">
+       <property name="text">
+        <string>Закрыть</string>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </item>
+   <item row="4" column="1">
+    <widget class="QSpinBox" name="sb_port">
+     <property name="buttonSymbols">
+      <enum>QAbstractSpinBox::ButtonSymbols::NoButtons</enum>
+     </property>
+     <property name="keyboardTracking">
+      <bool>true</bool>
+     </property>
+     <property name="maximum">
+      <number>99999</number>
      </property>
     </widget>
    </item>
@@ -67,8 +114,8 @@
    <slot>close()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>296</x>
-     <y>279</y>
+     <x>387</x>
+     <y>205</y>
     </hint>
     <hint type="destinationlabel">
      <x>199</x>

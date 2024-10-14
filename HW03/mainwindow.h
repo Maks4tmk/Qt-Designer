@@ -22,11 +22,11 @@ public:
 
 private slots:
     void on_pb_ok_clicked();
+    void Update();
 
 private:
     Ui::MainWindow *ui;
     ConnectStatust* connStatus = new ConnectStatust(this);
-    QSqlDatabase db = QSqlDatabase::addDatabase("QPSQL");
-    bool connected;
+    QString Info();
 };
 #endif // MAINWINDOW_H

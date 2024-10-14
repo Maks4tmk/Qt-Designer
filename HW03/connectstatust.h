@@ -2,6 +2,8 @@
 #define CONNECTSTATUST_H
 
 #include <QDialog>
+#include <QSqlDatabase>
+
 
 namespace Ui {
 class ConnectStatust;
@@ -14,10 +16,20 @@ class ConnectStatust : public QDialog
 public:
     explicit ConnectStatust(QWidget *parent = nullptr);
     ~ConnectStatust();
-    void setData(const QString& data, bool status);
+    void getData(QString& data);
+    void disconnect();
+
+signals:
+    void update_info();
+
+private slots:
+    void on_pb_OK_clicked();
+
 
 private:
     Ui::ConnectStatust *ui;
+    QSqlDatabase db = QSqlDatabase::addDatabase("QPSQL");
+    bool connected;
 };
 
 #endif // CONNECTSTATUST_H
